@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Random letter Picker</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Random Letter Picker</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="Enter a sentence">
+        </div>
+        <div>
+            <button type="submit" onclick="letterGenerate()">Pick</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+    <script>
+         function letterGenerate(){
+            let name = document.getElementById("input").value
+            let result = document.getElementById("result")
+            if(isNaN(name)){
+            let randomIndex = Math.floor(Math.random()*name.length)
+            result.innerHTML=name[randomIndex]
+            }
+            else
+            result.innerHTML="Please enter letters or words"
+        }
+        
+    
+    </script>
+</body>
+</html>

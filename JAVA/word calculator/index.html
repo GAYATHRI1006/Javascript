@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Word Calculator</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Word Calculator</h2>
+        <div class="inputdiv">
+            <textarea name="sentence" id="input" cols="35" rows="14" placeholder="Type here"></textarea>
+        </div>
+        <div>
+            <button type="submit" onclick="wordcalculate()">Calculate</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+    <script>
+         function wordcalculate(){
+            let text = document.getElementById("input").value.trim()
+            let result = document.getElementById("result")
+            if(text ==" ")
+            result.innerHTML="Please enter the words"
+            else{
+            let words=text.split(' ').filter(word => word.length >0)
+            count = words.length
+            result.innerHTML=`Total words: ${count}`
+            }
+        }
+        
+    
+    </script>
+</body>
+</html>
